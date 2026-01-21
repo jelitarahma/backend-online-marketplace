@@ -59,7 +59,7 @@ app.use(async (req, res, next) => {
 });
 
 // Routes
-app.get("/", (req, res) => res.send("API Running - JSHope E-Commerce"));
+app.get("/", (req, res) => res.send("API Running - Online Marketplace"));
 
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/product");

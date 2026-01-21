@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "JSHope E-Commerce Backend API",
+  "description": "Online Marketplace Backend API",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",

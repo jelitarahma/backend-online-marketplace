@@ -1,8 +1,8 @@
-# JSHope E-Commerce Backend API
+# Online Marketplace Backend API
 
-Backend API untuk JSHope E-Commerce dengan integrasi Midtrans Payment Gateway.
+Backend API untuk Online Marketplace dengan integrasi Midtrans Payment Gateway.
 
-By: Jelita Rahma
+By: Binus Learning
 
 ## Tech Stack
 
@@ -15,12 +15,12 @@ By: Jelita Rahma
 
 API sudah online di:
 ```
-https://jshope-backend-phs3.vercel.app
+https://backend-online-marketplace.vercel.app
 ```
 
 Contoh endpoint:
-- https://jshope-backend-phs3.vercel.app/jshope/categories
-- https://jshope-backend-phs3.vercel.app/jshope/product
+- https://backend-online-marketplace.vercel.app/categories
+- https://backend-online-marketplace.vercel.app/product
 
 ## Cara Menjalankan di Lokal
 
@@ -33,8 +33,8 @@ Contoh endpoint:
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/jelitarahma/jshope-backend.git
-   cd jshope-backend
+   git clone https://github.com/binus-learning/online-marketplace-backend.git
+   cd online-marketplace-backend
    ```
 
 2. Install dependencies:

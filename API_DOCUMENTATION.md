@@ -58,15 +58,15 @@ Log transaksi pembayaran dari Midtrans (untuk audit/debugging).
 
 ## API Routes & Akses Role
 
-Base URL: `/jshope`
+Base URL: `/` (Production: `https://backend-online-marketplace.vercel.app`)
 
-### 1. Authentication (`/jshope/auth`)
+### 1. Authentication (`/auth`)
 | Method | URL | Akses | Fungsi | Library/Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `POST` | `/register` | Public | Mendaftar user baru (default role: customer) | `bcryptjs` |
 | `POST` | `/login` | Public | Login dan mendapatkan JWT Token | `bcryptjs`, `jsonwebtoken` |
 
-### 2. Products (`/jshope/product`)
+### 2. Products (`/product`)
 | Method | URL | Akses | Fungsi | Library/Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/` | Public | Mengambil semua produk aktif | `mongoose` |
@@ -75,7 +75,7 @@ Base URL: `/jshope`
 | `PUT` | `/:id` | **Admin** | Mengupdate produk (support upload gambar/video) | `auth`, `multer`, `slugify` |
 | `DELETE` | `/:id` | **Admin** | Menghapus produk, varian, dan gambar terkait | `auth` |
 
-### 3. Categories (`/jshope/categories`)
+### 3. Categories (`/categories`)
 | Method | URL | Akses | Fungsi | Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/` | Public | List semua kategori | - |
@@ -84,7 +84,7 @@ Base URL: `/jshope`
 | `PUT` | `/:id` | **Admin** | Edit kategori | `auth` |
 | `DELETE` | `/:id` | **Admin** | Hapus kategori | `auth` |
 
-### 4. Cart (`/jshope/cart`)
+### 4. Cart (`/cart`)
 | Method | URL | Akses | Fungsi | Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/` | **Customer** | Lihat isi keranjang user login | `auth` |
@@ -94,7 +94,7 @@ Base URL: `/jshope`
 | `PATCH` | `/:id/toggle-checked` | **Customer** | Pilih/Hapus pilihan item untuk checkout | `auth` |
 | `DELETE` | `/:id` | **Customer** | Hapus item dari keranjang | `auth` |
 
-### 5. Orders (`/jshope/orders`)
+### 5. Orders (`/orders`)
 | Method | URL | Akses | Fungsi | Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/` | **Customer** | History pesanan user login | `auth` |
@@ -107,7 +107,7 @@ Base URL: `/jshope`
 | `GET` | `/admin/:id` | **Admin** | Detail pesanan (view admin) | `auth` |
 | `PATCH` | `/admin/:id/status` | **Admin** | Update status pesanan (kirim resi, dll) | `auth` |
 
-### 6. Payment / Midtrans (`/jshope/midtrans`)
+### 6. Payment / Midtrans (`/midtrans`)
 | Method | URL | Akses | Fungsi | Library/Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `POST` | `/notification` | **Public** | Webhook dari Midtrans (status update otomatis) | `midtrans-client` |
@@ -115,7 +115,7 @@ Base URL: `/jshope`
 | `GET` | `/status/:orderNumber` | User/Admin | Cek status transaksi ke Midtrans API | `auth`, `midtrans-client` |
 | `POST` | `/cancel/:orderNumber` | **Admin** | Batalkan transaksi di Midtrans | `auth`, `midtrans-client` |
 
-### 7. Dashboard (`/jshope/dashboard`)
+### 7. Dashboard (`/dashboard`)
 | Method | URL | Akses | Fungsi | Middleware |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/` | **Admin** | Statistik penjualan, total user, order, dll | `auth` |
